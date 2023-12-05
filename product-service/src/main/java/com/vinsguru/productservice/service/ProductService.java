@@ -37,7 +37,7 @@ public class ProductService {
     public Mono<ProductDto> insertProduct(Mono<ProductDto> productDtoMono){
         return productDtoMono
                 .map(EntityDtoUtil::toEntity)
-                .flatMap(this.repository::insert)
+                .flatMap(this.repository::insert)   //insert 반환값이 mono 이므로 map을 사용하게 되면 반환값이<Mono<Mono<Product>>>가 된다.
                 .map(EntityDtoUtil::toDto)
                 .doOnNext(this.sink::tryEmitNext);
     }

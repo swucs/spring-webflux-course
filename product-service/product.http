@@ -1,0 +1,14 @@
+### create product
+POST http://localhost:8091/product
+Content-Type: application/json
+
+{
+    "name": "Product 1",
+    "description": "Product 1 description",
+    "price": 100
+}
+
+
+### get product
+GET http://localhost:8091/product/656ec1941ea1150eef30543a
+

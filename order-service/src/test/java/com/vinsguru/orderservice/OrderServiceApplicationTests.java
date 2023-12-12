@@ -29,7 +29,7 @@ class OrderServiceApplicationTests {
 	@Test
 	void contextLoads() {
 
-		Flux<PurchaseOrderResponseDto> dtoFlux = Flux.zip(userClient.getAllUsers(), productClient.getAllProducts())
+		Flux<PurchaseOrderResponseDto> dtoFlux = Flux.zip(userClient.getAllUsers(), productClient.getAllProducts()) //하나씩 방출하여 tuple에 담긴다.
 				.map(t -> buildDto(t.getT1(), t.getT2()))
 				.flatMap(dto -> this.fulfillmentService.processOrder(Mono.just(dto)))
 				.doOnNext(System.out::println);

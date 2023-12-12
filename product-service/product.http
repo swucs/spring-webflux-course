@@ -3,12 +3,17 @@ POST http://localhost:8091/product
 Content-Type: application/json
 
 {
-    "name": "Product 1",
+    "name": "Product max",
     "description": "Product 1 description",
-    "price": 100
+    "price": 1001
 }
 
 
+### get all product
+GET http://localhost:8091/product/all
+
+
+
 ### get product
-GET http://localhost:8091/product/656ec1941ea1150eef30543a
+GET http://localhost:8091/product/657025fb88b76633e9f25ab9
 

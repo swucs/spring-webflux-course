@@ -1,17 +1,26 @@
+### place-order
+POST http://localhost:8080/order
+Content-Type: application/json
+
+{
+  "productId": "657025fb88b76633e9f25ab9",
+  "userId": 1
+}
+
+
+### get-user-orders
+GET http://localhost:8080/order/user/1
+
+
+
+
 ### get-all-users
 GET http://localhost:8092/user/all
 
 ### get-user-by-id
-GET http://localhost:8092/user/1
+GET http://localhost:8092/user/2
 
-### create-user
-POST http://localhost:8092/user
-Content-Type: application/json
 
-{
-    "name": "sam",
-    "balance": 1000
-}
 
 ### update-user
 PUT http://localhost:8092/user/1
@@ -27,12 +36,6 @@ Content-Type: application/json
 ### delete-user
 DELETE http://localhost:8092/user/11
 Content-Type: application/json
-
-
-
-
-### get-user-transaction
-GET http://localhost:8092/user/transaction?userId=1
 
 
 
